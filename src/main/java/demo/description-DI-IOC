@@ -1,0 +1,33 @@
+Bean: java object
+Spring Bean: các Bean được Spring quản lý
+
+DI (Dependence Injection :” tiêm đối tượng cần thiết ” : Liên kết các Spring Bean vào các biến cần thiết
+
+Nạp bean:
+1, @Controller , @component, @service, @repository
+2, tạo class có @Bean và  trong  file config có @configuration
+
+Tạo
+Spring IOC container tạo Bean từ class Student nhờ @Component, nạp vào hệ thống
+
+
+
+@Component      // Spring IOC container tạo đối tượng
+public class Student {
+   private int id  = 1;
+   private String name = "Van Trinh";
+    //getter setter AllArgsConstructor  NoArgsContstructor
+    
+
+
+Dùng
+Khai báo @Autowired để sử dụng : DI : Spring IOC container tiêm chích Bean đã được tạo vào biến student
+
+    @Autowired
+    private Student  student;
+
+    @RequestMapping("test")
+    public Student test(){
+        return student;
+    }
+
